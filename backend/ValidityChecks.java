@@ -6,22 +6,13 @@ import cards.Value;
 
 public abstract class ValidityChecks {
 	
-	public boolean CheckValidColumnMove(Card targetCard, Card selectedCard, Column column)
+	public static boolean CheckValidColumnMove(Card targetCard, Card selectedCard)
 	{
 		
 		 boolean isValidMove = false;
 		 boolean isOppositeColor = false;
 		 boolean isCorrectOrder = false;
 		
-		 //checks if the card is a king and the column that is selected is empty, returns valid move if both are true
-		 if(targetCard.GetValue()==Value.KING.GetValue() && CheckIfColumnIsEmpty(column) == true)
-		 {
-			 
-			 isValidMove = true;
-			 
-			 return isValidMove;
-			 
-		 }
 		
 		 //This if checks for a black target card and a red selected card
 		if(targetCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite()) &&
@@ -71,9 +62,23 @@ public abstract class ValidityChecks {
 		
 		return isValidMove;
 		
-	}	
+	}
 	
-	public boolean CheckIfColumnIsEmpty(Column column)
+	public static boolean CheckValidKingMove(Card KingCard, Column column)
+	{
+		
+		boolean validKingMove = false;
+		
+		if(CheckIfColumnIsEmpty(column)==true && KingCard.GetValue()==Value.KING.GetValue())
+		{
+			validKingMove = true;
+		}
+		
+		return validKingMove;
+		
+	}
+	
+	private static boolean CheckIfColumnIsEmpty(Column column)
 	{
 		
 		boolean columnEmpty = false;
