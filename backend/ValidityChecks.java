@@ -46,7 +46,7 @@ public abstract class ValidityChecks {
 		 
 	}
 	
-	public boolean CheckValidPileMove(Card[] pile, Card card, int cardCounter)
+	public boolean CheckValidSuitePileMove(Card[] pile, Card card, int cardCounter)
 
 	{
 		
@@ -68,12 +68,27 @@ public abstract class ValidityChecks {
 		
 		boolean validKingMove = false;
 		
-		if(column.GetFaceUpCards().isEmpty()==true && column.GetFaceDownCards().isEmpty() == true && KingCard.GetValue()==12)
+		if(CheckIfColumnIsEmpty(column)==true && KingCard.GetValue()==12)
 		{
 			validKingMove = true;
 		}
 		
 		return validKingMove;
+		
+	}
+	
+	public boolean CheckIfColumnIsEmpty(Column column)
+	{
+		
+		boolean columnEmpty = false;
+		
+		if(column.GetFaceDownCards().isEmpty()==true && column.GetFaceUpCards().isEmpty()==true)
+		{
+			columnEmpty = true;
+		}
+		
+		
+		return columnEmpty;
 		
 	}
 
