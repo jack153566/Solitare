@@ -16,8 +16,7 @@ public class Card{
 	{
 		
 	}
-	
-	
+		
 	public String GetValue()
 	{
 		

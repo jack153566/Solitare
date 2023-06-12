@@ -32,7 +32,6 @@ public abstract class BackendInitialization {
 		
 	}
 	
-	
 	/**
 	 * Sets up the columns of the board
 	 * 
