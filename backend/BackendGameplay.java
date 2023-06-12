@@ -9,9 +9,18 @@ import cards.Card;
  */
 import java.util.List;
 
+import board.Column;
+
 
 public abstract class BackendGameplay {
 	
+	
+	/**
+	 * This method refills the deckpile from the drawpile if there are no cards left to draw
+	 * 
+	 * @param drawPile
+	 * @param deck
+	 */
 	public static void RefillDeck(List<Card> drawPile, List<Card>deck)
 	{
 		
@@ -36,15 +45,5 @@ public abstract class BackendGameplay {
 		}
 		
 	}
-	
-	//TODO FINISH METHOD
-	public void CheckMoveValidity(Card selectedCard, Column target)
-	{
-		
-	
-		
-		
-	}
-
 
 }

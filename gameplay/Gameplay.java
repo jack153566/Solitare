@@ -1,5 +1,9 @@
-package backend;
+package gameplay;
 import java.util.List;
+
+import backend.BackendGameplay;
+import board.Board;
+import board.Column;
 public abstract class Gameplay {
 	
 	private int heartCounter = 0;
@@ -29,7 +33,7 @@ public abstract class Gameplay {
 	}
 	
 	//TODO FINISH METHOD
-	public void PlaceCardFromDeck()
+	public void PlaceCardFromDrawPile()
 	{
 		
 	}

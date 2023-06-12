@@ -1,4 +1,5 @@
 package backend;
+import board.Column;
 import cards.Card;
 import cards.Suite;
 

@@ -1,4 +1,4 @@
-package backend;
+package board;
 /**
  * 
  * This class is used for the actual board
@@ -9,6 +9,7 @@ package backend;
 //import java.util.ArrayList;
 import java.util.List;
 
+import backend.BackendInitialization;
 import cards.Card;
 public class Board  {
 	

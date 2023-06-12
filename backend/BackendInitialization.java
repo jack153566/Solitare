@@ -4,8 +4,15 @@ import cards.Suite;
 import cards.Value;
 import java.util.ArrayList;
 
+import board.Board;
+
 public abstract class BackendInitialization {
 	
+	/**
+	 * Creates the initial deck and returns it
+	 * 
+	 * @return
+	 */
 	public static ArrayList<Card> CreateDeck()
 	{
 		
