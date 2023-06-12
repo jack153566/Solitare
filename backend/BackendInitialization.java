@@ -1,7 +1,7 @@
 package backend;
 import cards.Card;
 import cards.Suite;
-import cards.Values;
+import cards.Value;
 import java.util.ArrayList;
 
 public abstract class BackendInitialization {
@@ -17,7 +17,7 @@ public abstract class BackendInitialization {
 			for(Suite s: Suite.values())
 			{
 				
-				for(Values v: Values.values())
+				for(Value v: Value.values())
 				{
 					
 					deck.add(new Card(s, v));

@@ -12,7 +12,7 @@ public class Card{
 	private String suite;
 	
 	//Constructor
-	public Card(cards.Suite suite, cards.Values values)
+	public Card(cards.Suite suite, cards.Value values)
 	{
 		
 	}
@@ -31,6 +31,5 @@ public class Card{
 		return this.suite;
 		
 	}
-	
 	
 }
