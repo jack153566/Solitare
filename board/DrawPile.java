@@ -2,7 +2,7 @@ package board;
 import cards.Card;
 import java.util.List;
 
-public class DrawPile {
+final class DrawPile {
 	
 	//class variables
 	private List<Card> drawPile;

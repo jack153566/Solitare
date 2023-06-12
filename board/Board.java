@@ -6,18 +6,17 @@ package board;
  * @author down7857
  *
  */
-//import java.util.ArrayList;
-import java.util.List;
-
 import backend.BackendInitialization;
 import cards.Card;
+import cards.Suite;
+
 public class Board  {
 	
 	
 	//Class variables
-	private List<Card> deck;
+	private Deck deck;
 	
-	private List<Card> drawPile;
+	private DrawPile drawPile;
 	
 	private Column column1;
 	private Column column2;
@@ -27,17 +26,13 @@ public class Board  {
 	private Column column6;
 	private Column column7;
 	
-	
-	private Card heartPile[];
-	private Card diamondPile[];
-	private Card clubPile[];
-	private Card spadePile[];
+	private SuitePiles suitePiles;
 	
 	//TODO FINISH CONSTRUCTOR
 	public Board(){
 		
 		//initialize variables
-		deck = BackendInitialization.CreateDeck();
+		deck = new Deck();
 		
 		column1 = new Column();
 		column2 = new Column();
@@ -47,10 +42,7 @@ public class Board  {
 		column6 = new Column();
 		column7 = new Column();
 		
-		heartPile = new Card[13];
-		diamondPile = new Card[13];
-		clubPile = new Card[13];
-		spadePile = new Card[13];
+		suitePiles = new SuitePiles();
 		
 		//sets up initial board
 		BackendInitialization.SetUpBoard(this);
@@ -79,48 +71,25 @@ public class Board  {
 				
 				default: return null;
 				
-				
 			} 
 		
 	}	
 	
-	public List<Card> GetDrawPile()
+	public DrawPile GetDrawPile()
 	{
 		return this.drawPile;
 	}
 	
-	public List<Card> GetDeck()
+	public Deck GetDeck()
 	{
 		return this.deck;
 	}
 	
-	public Card[] getPile(String pile)
+	public Card[] GetSuitesPile(Suite suite)
 	{
 		
-		if(pile.equals("Heart") )
-		{
-			return this.heartPile;
-		}
+		return this.suitePiles.getPile(suite);	
 		
-		if(pile.equals("Spade") )
-		{
-			return this.spadePile;
-		}
-		
-		if(pile.equals("Diamond"))
-		{
-			return this.diamondPile;
-		}
-		
-		if(pile.equals("Club"))
-		{
-			return this.clubPile;
-		}
-	
-		else
-		{
-			return null;
-		}
 	}
 
 }

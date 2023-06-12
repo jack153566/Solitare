@@ -2,7 +2,7 @@ package board;
 import cards.Card;
 import cards.Suite;
 
-public class SuitePiles {
+final class SuitePiles {
 	
 	//class variables
 	private Card[] heartPile;
