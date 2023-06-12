@@ -5,7 +5,7 @@ import java.util.List;
 import backend.BackendInitialization;
 import cards.Card;
 
-final class Deck {
+public final class Deck {
 	
 	//Class Variables
 	private List<Card> deck;

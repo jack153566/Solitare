@@ -55,7 +55,8 @@ public abstract class BackendInitialization {
 			{
 				board.GetColumn(i)
 				.GetFaceDownCards()
-				.add(board.GetDeck().remove(0));
+				.add(board.GetDeck()
+				.GetDeck().remove(0));
 			}
 			
 		}
@@ -66,10 +67,10 @@ public abstract class BackendInitialization {
 			
 			board.GetColumn(i)
 			.GetFaceUpCards()
-			.add(board.GetDeck().remove(0));
+			.add(board.GetDeck()
+			.GetDeck().remove(0));
 			
 		}
-		
 		
 	}
 

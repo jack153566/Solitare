@@ -4,7 +4,7 @@ import java.util.List;
 
 import cards.Card;
 
-final class Column {	
+public final class Column {	
 	
 	private List<Card>faceDownCards;
 	private List<Card>faceUpCards;
