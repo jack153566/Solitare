@@ -2,13 +2,18 @@ package board;
 import cards.Card;
 import cards.Suite;
 
-final class SuitePiles {
+public final class SuitePiles {
 	
 	//class variables
 	private Card[] heartPile;
 	private Card[] diamondPile;
 	private Card[] spadePile;
 	private Card[] clubPile;
+	
+	private int heartCounter;
+	private int diamondCounter;
+	private int spadeCounter;
+	private int clubCounter;
 	
 	/**
 	 * Constructor
@@ -54,6 +59,38 @@ final class SuitePiles {
 			default:
 				
 				return null;
+				
+		}
+		
+	}
+	
+	public int getCounter(Suite suite)
+	{
+		
+		switch (suite) 
+		{
+		
+			case CLUB:
+				
+				return clubCounter;
+				
+			case SPADE:
+				
+				return spadeCounter;
+				
+			case DIAMOND:
+				
+				return diamondCounter;
+				
+			case HEART:
+				
+				return heartCounter;	
+				
+			default:
+				
+				//error if this is reached
+				System.exit(0);
+				return 0;
 				
 		}
 		

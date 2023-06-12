@@ -47,7 +47,7 @@ public abstract class ValidityChecks {
 		 
 	}
 	
-	public boolean CheckValidSuitePileMove(Card[] pile, Card card, int cardCounter)
+	public static boolean CheckValidSuitePileMove(Card[] pile, Card card, int cardCounter)
 
 	{
 		

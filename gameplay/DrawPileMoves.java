@@ -2,32 +2,40 @@ package gameplay;
 import cards.Card;
 import board.Column;
 import backend.ValidityChecks;
+import board.SuitePiles;
 
 public abstract class DrawPileMoves {
 	
-	
-	public void MoveToColumn(Card targetCard, Column targetCol)
+	/**
+	 * Checks to see if targetCol is empty first and if targetCard is a king, if it is accepts the move, if not, checks that the column move is valid
+	 * 
+	 * @param selectedCard
+	 * @param targetCol
+	 */
+	public void MoveToColumn(Card selectedCard, Column targetCol)
 	{
 		
-		if (ValidityChecks.CheckValidKingMove(targetCard,targetCol) == true)
+		if (ValidityChecks.CheckValidKingMove(selectedCard,targetCol) == true)
 		{
 			
-			targetCol.GetFaceUpCards().add(targetCard);
+			targetCol.GetFaceUpCards().add(selectedCard);
 			
 		}
 		
-		else if(ValidityChecks.CheckValidColumnMove(targetCard, targetCol.GetFaceUpCards().get(0))==true)
+		else if(ValidityChecks.CheckValidColumnMove(selectedCard, targetCol.GetFaceUpCards().get(0))==true)
 		{
 			
-			targetCol.GetFaceUpCards().add(targetCard);
+			targetCol.GetFaceUpCards().add(selectedCard);
 			
 		}
 		
 	}
 	
 	//TODO FINISH METHOD
-	public void MoveToSuitePile()
+	public void MoveToSuitePile(SuitePiles suitePile, Card selectedCard, int cardCounter)
 	{
+		
+		
 		
 	}
 	
