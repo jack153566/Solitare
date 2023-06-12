@@ -28,7 +28,6 @@ public class Board  {
 	
 	private SuitePiles suitePiles;
 	
-	//TODO FINISH CONSTRUCTOR
 	public Board(){
 		
 		//initialize variables
