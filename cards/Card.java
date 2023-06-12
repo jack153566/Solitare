@@ -8,7 +8,7 @@ package cards;
  */
 public class Card{
 	
-	private String value;
+	private int value;
 	private String suite;
 	
 	//Constructor
@@ -17,14 +17,14 @@ public class Card{
 		
 	}
 		
-	public String GetValue()
+	public int GetValue()
 	{
 		
 		return this.value;
 		
 	}
 	
-	public String Suite()
+	public String GetSuite()
 	{
 		
 		return this.suite;
