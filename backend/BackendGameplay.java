@@ -9,7 +9,7 @@ import cards.Card;
  */
 import java.util.List;
 
-import cards.Card;
+
 public abstract class BackendGameplay {
 	
 	public static void RefillDeck(List<Card> drawPile, List<Card>deck)
@@ -45,14 +45,6 @@ public abstract class BackendGameplay {
 		
 		
 	}
-	
-//	//TODO FINISH METHOD
-//	public boolean CheckOppSuiteColor(Card card1, Card card2)
-//	{
-//			
-//		
-//		
-//		
-//	}
+
 
 }

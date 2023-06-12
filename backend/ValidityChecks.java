@@ -4,12 +4,39 @@ import cards.Suite;
 
 public abstract class ValidityChecks {
 	
-	public boolean CheckValidMove(Card targetCard, Card selectedCard)
+	public boolean CheckValidColumnMove(Card targetCard, Card selectedCard)
 	{
 		
 		 boolean isValidMove = false;
+		 boolean isOppositeColor = false;
+		 boolean isCorrectOrder = false;
+		
+		
+		 //This if checks for a black target card and a red selected card
+		if(targetCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite()) &&
+		   selectedCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite())  )
+		
+		{
+			isOppositeColor = true;			
+		}
 		 
-		 if(IsOppositeColors(targetCard, selectedCard) == true && IsNumericalOrder(targetCard, selectedCard) == true)
+		//This if checks for a red target card and a black selected card
+		if(targetCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite()) &&
+		   selectedCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite())  )
+		
+		{			
+					isOppositeColor = true;				
+		}
+		
+		//this checks for numerical value correctness
+		if(targetCard.GetValue()-1 == selectedCard.GetValue())
+		{
+			isCorrectOrder = true;
+		}
+		
+		 
+		 //this checks to make sure all conditions are true to make sure it is a valid move
+		 if(isOppositeColor == true && isCorrectOrder == true)
 		 {
 			 isValidMove = true;
 		 }
@@ -18,48 +45,20 @@ public abstract class ValidityChecks {
 		 
 	}
 	
-	private boolean IsOppositeColors(Card targetCard, Card selectedCard)
+	public boolean CheckValidPileMove(Card[] pile, Card card, int cardCounter)
 	{
 		
-		boolean isOppositeColor = false;
+		boolean isValidMove = false;
 		
-		if(targetCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite()) &&
-		   selectedCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite())  )
+		if(pile[cardCounter].GetValue()+1 == card.GetValue())
 		{
 			
-			isOppositeColor = true;
-			
-			return isOppositeColor;
+			isValidMove = true;
 			
 		}
 		
-		if(targetCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite()) &&
-				   selectedCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite())  )
-				{
-					
-					isOppositeColor = true;
-					
-					return isOppositeColor;
-					
-				}
-		
-		return isOppositeColor;
+		return isValidMove;
 		
 	}
-	
-	private boolean IsNumericalOrder(Card targetCard, Card selectedCard)
-	{
-		
-		boolean isCorrectOrder = false;
-		
-		if(targetCard.GetValue()-1 == selectedCard.GetValue())
-		{
-			isCorrectOrder = true;
-		}
-		
-		return isCorrectOrder;
-		
-	}
-	
 
 }
