@@ -8,6 +8,8 @@ package backend;
  */
 //import java.util.ArrayList;
 import java.util.List;
+
+import cards.Card;
 public class Board  {
 	
 	

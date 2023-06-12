@@ -1,60 +1,32 @@
 package backend;
+import cards.Card;
+import cards.Suite;
+import cards.Values;
 import java.util.ArrayList;
-import java.util.Collections;
+
 public abstract class BackendInitialization {
 	
-	
-	/**
-	 * 
-	 * Creates the initial deck at the start of the game and shuffles it.
-	 * 
-	 * @return Initial deck
-	 */
 	public static ArrayList<Card> CreateDeck()
 	{
 		
-		ArrayList <Card> deck = new ArrayList<Card>();
+		ArrayList<Card> deck = new ArrayList<Card>();
 		
-		
-		for(int i=0; i<4;i++)
+		for(int i=0; i<52; i++)
 		{
 			
-			for(int j=0; j<13;j++)
+			for(Suite s: Suite.values())
 			{
 				
-				//Creates the Diamond cards and adds them to the deck
-				if(i==0)
+				for(Values v: Values.values())
 				{
-					Card card = new Card(j+1,"Diamond");
-					deck.add(card);
-				}
-				
-				//Creates the Heart cards and adds them to the deck
-				if(i==1)
-				{
-					Card card = new Card(j+1,"Heart");
-					deck.add(card);		
-				}
-				
-				//Creates the Club cards and adds them to the deck
-				if(i==2)
-				{	
-					Card card = new Card(j+1,"Clubs");
-					deck.add(card);
-				}
-				
-				//Creates the Spade cards and adds them to the deck
-				if(i==3)
-				{
-					Card card = new Card(j+1,"Spades");
-					deck.add(card);
-				}
 					
+					deck.add(new Card(s, v));
+					
+				}
+				
 			}
 			
 		}
-		
-		Collections.shuffle(deck);
 		
 		return deck;
 		

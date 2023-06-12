@@ -1,4 +1,5 @@
 package backend;
+import cards.Card;
 /**
  * 
  * This class is used for not actual gameplay but updating the board state
@@ -7,6 +8,8 @@ package backend;
  *
  */
 import java.util.List;
+
+import cards.Card;
 public abstract class BackendGameplay {
 	
 	public static void RefillDeck(List<Card> drawPile, List<Card>deck)
@@ -38,15 +41,18 @@ public abstract class BackendGameplay {
 	public void CheckMoveValidity(Card selectedCard, Column target)
 	{
 		
-		
+	
 		
 		
 	}
 	
-	//TODO FINISH METHOD
-	public void CheckMoveValidity(Card selectedCard, Card[] target)
-	{
-			
-	}
+//	//TODO FINISH METHOD
+//	public boolean CheckOppSuiteColor(Card card1, Card card2)
+//	{
+//			
+//		
+//		
+//		
+//	}
 
 }
