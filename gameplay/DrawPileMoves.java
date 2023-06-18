@@ -31,15 +31,10 @@ public abstract class DrawPileMoves {
 		
 	}
 	
-	//TODO FINISH METHOD
-	public void MoveToSuitePile(Card[] pile, Card selectedCard, int cardCounter)
+	//TODO FINISH METHOD THIS WILL NEED TO CALL TO A METHOD THAT GIVES INPUT TO WHICH PILE WAS USED
+	public void MoveToSuitePile(SuitePiles pile, Card selectedCard, int cardCounter)
 	{
 		
-//		if(ValidityChecks.CheckValidSuitePileMove(suitePile.getPile(), selectedCard, cardCounter)==true)
-//		{
-//			
-//		}
-//		
 		
 	}
 	
