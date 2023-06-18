@@ -47,13 +47,14 @@ public abstract class ValidityChecks {
 		 
 	}
 	
+	
 	public static boolean CheckValidSuitePileMove(Card[] pile, Card card, int cardCounter)
 
 	{
 		
 		boolean isValidMove = false;
 		
-		if(pile[cardCounter].GetValue()+1 == card.GetValue())
+		if(pile[cardCounter].GetValue()+1 == card.GetValue() && pile[cardCounter].GetSuite()==card.GetSuite())
 		{
 			
 			isValidMove = true;
