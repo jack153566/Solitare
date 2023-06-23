@@ -9,6 +9,7 @@ package board;
 import backend.BackendInitialization;
 import cards.Card;
 import cards.Suite;
+import java.util.Stack;
 
 public class Board  {
 	
@@ -84,7 +85,7 @@ public class Board  {
 		return this.deck;
 	}
 	
-	public Card[] GetSuitesPile(Suite suite)
+	public Stack GetSuitesPile(Suite suite)
 	{
 		
 		return this.suitePiles.getPile(suite);	

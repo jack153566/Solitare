@@ -1,14 +1,15 @@
 package board;
 import cards.Card;
 import cards.Suite;
+import java.util.Stack;
 
 public final class SuitePiles {
 	
 	//class variables
-	private Card[] heartPile;
-	private Card[] diamondPile;
-	private Card[] spadePile;
-	private Card[] clubPile;
+	private Stack heartPile;
+	private Stack diamondPile;
+	private Stack spadePile;
+	private Stack clubPile;
 	
 	private int heartCounter;
 	private int diamondCounter;
@@ -21,10 +22,10 @@ public final class SuitePiles {
 	SuitePiles()
 	{
 		
-		heartPile = new Card[13];
-		diamondPile = new Card[13];
-		spadePile = new Card[13];
-		clubPile = new Card[13];
+		heartPile = new Stack();
+		diamondPile = new Stack();
+		spadePile = new Stack();
+		clubPile = new Stack();
 		
 	}
 	
@@ -34,7 +35,7 @@ public final class SuitePiles {
 	 * @param suite
 	 * @return
 	 */
-	public Card[] getPile(Suite suite)
+	public Stack getPile(Suite suite)
 	{
 		
 		switch (suite) 
