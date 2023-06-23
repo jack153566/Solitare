@@ -6,15 +6,10 @@ import java.util.Stack;
 public final class SuitePiles {
 	
 	//class variables
-	private Stack heartPile;
-	private Stack diamondPile;
-	private Stack spadePile;
-	private Stack clubPile;
-	
-	private int heartCounter;
-	private int diamondCounter;
-	private int spadeCounter;
-	private int clubCounter;
+	private Stack<Card> heartPile;
+	private Stack<Card> diamondPile;
+	private Stack<Card> spadePile;
+	private Stack<Card> clubPile;
 	
 	/**
 	 * Constructor
@@ -22,10 +17,10 @@ public final class SuitePiles {
 	SuitePiles()
 	{
 		
-		heartPile = new Stack();
-		diamondPile = new Stack();
-		spadePile = new Stack();
-		clubPile = new Stack();
+		heartPile = new Stack<Card>();
+		diamondPile = new Stack<Card>();
+		spadePile = new Stack<Card>();
+		clubPile = new Stack<Card>();
 		
 	}
 	
@@ -64,38 +59,5 @@ public final class SuitePiles {
 		}
 		
 	}
-	
-	public int getCounter(Suite suite)
-	{
-		
-		switch (suite) 
-		{
-		
-			case CLUB:
-				
-				return clubCounter;
-				
-			case SPADE:
-				
-				return spadeCounter;
-				
-			case DIAMOND:
-				
-				return diamondCounter;
-				
-			case HEART:
-				
-				return heartCounter;	
-				
-			default:
-				
-				//error if this is reached
-				System.exit(0);
-				return 0;
-				
-		}
-		
-	}
-	
 	
 }

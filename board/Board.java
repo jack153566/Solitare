@@ -85,7 +85,7 @@ public class Board  {
 		return this.deck;
 	}
 	
-	public Stack GetSuitesPile(Suite suite)
+	public Stack<Card> GetSuitesPile(Suite suite)
 	{
 		
 		return this.suitePiles.getPile(suite);	

@@ -8,12 +8,16 @@ package cards;
  */
 public class Card{
 	
-	private int value;
+//	private int value;
 	private String suite;
+	private int value;
 	
 	//Constructor
-	public Card(cards.Suite suite, cards.Value values)
+	public Card(cards.Suite suite, cards.Value value)
 	{
+		
+		this.suite=suite.GetSuite();
+		this.value=value.GetValue();
 		
 	}
 		
