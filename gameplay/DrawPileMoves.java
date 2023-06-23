@@ -2,7 +2,7 @@ package gameplay;
 import cards.Card;
 import board.Column;
 import backend.ValidityChecks;
-import board.SuitePiles;
+import board.SuitePile;
 
 public abstract class DrawPileMoves {
 	
@@ -32,7 +32,7 @@ public abstract class DrawPileMoves {
 	}
 	
 	//TODO FINISH METHOD THIS WILL NEED TO CALL TO A METHOD THAT GIVES INPUT TO WHICH PILE WAS USED
-	public void MoveToSuitePile(SuitePiles pile, Card selectedCard, int cardCounter)
+	public void MoveToSuitePile(SuitePile pile, Card selectedCard, int cardCounter)
 	{
 		
 		

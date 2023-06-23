@@ -27,7 +27,11 @@ public class Board  {
 	private Column column6;
 	private Column column7;
 	
-	private SuitePiles suitePiles;
+	private SuitePile heartPile;
+	private SuitePile diamondPile;
+	private SuitePile clubPile;
+	private SuitePile spadePile;
+	
 	
 	public Board(){
 		
@@ -42,7 +46,10 @@ public class Board  {
 		column6 = new Column();
 		column7 = new Column();
 		
-		suitePiles = new SuitePiles();
+		heartPile = new SuitePile(Suite.HEART);
+		diamondPile = new SuitePile(Suite.DIAMOND);
+		clubPile = new SuitePile(Suite.CLUB);
+		spadePile = new SuitePile(Suite.SPADE);
 		
 		//sets up initial board
 		BackendInitialization.SetUpBoard(this);
@@ -85,11 +92,22 @@ public class Board  {
 		return this.deck;
 	}
 	
-	public Stack<Card> GetSuitesPile(Suite suite)
+	public SuitePile GetSuitePile(String suite)
 	{
 		
-		return this.suitePiles.getPile(suite);	
+		SuitePile error = new SuitePile();
 		
+		switch(suite)
+		{
+		
+			case "Heart": return heartPile;
+			case "Diamond": return diamondPile;
+			case "Club": return clubPile;
+			case "Spade": return spadePile;
+			
+			default: return error;
+		
+		}
 	}
 
 }
