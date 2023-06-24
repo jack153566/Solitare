@@ -23,16 +23,12 @@ public class Card{
 		
 	public int GetValue()
 	{
-		
-		return this.value;
-		
+		return this.value;	
 	}
 	
 	public String GetSuite()
 	{
-		
-		return this.suite;
-		
+		return this.suite;	
 	}
 	
 }

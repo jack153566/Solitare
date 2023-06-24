@@ -2,7 +2,7 @@ package gameplay;
 import backend.BackendGameplay;
 import backend.ValidityChecks;
 import board.Column;
-import board.SuitePiles;
+import board.SuitePile;
 import cards.*;
 
 
@@ -21,12 +21,16 @@ public abstract class ColumnMoves {
 		
 	}
 	
-	//TODO FINISH METHOD
-	public void MoveCardTosuitePile(SuitePiles pile, Card card )
+	public void MoveCardTosuitePile(SuitePile pile, Card card )
 	{
-		if(CheckValidSuitePile(pile.getPile(suite))
+		
+		if(ValidityChecks.CheckValidSuitePileMove(pile, card)==true)
+		{
+			
+			pile.GetPile().add(card);
+			
+		}
+				
 	}
 	
-	 
-
 }
