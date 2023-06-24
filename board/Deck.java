@@ -18,6 +18,11 @@ public final class Deck {
 		this.deck = BackendInitialization.CreateDeck();
 	}
 	
+	/**
+	 * deck getter
+	 * 
+	 * @return
+	 */
 	public List<Card>GetDeck()
 	{
 		

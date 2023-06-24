@@ -14,7 +14,6 @@ import board.Column;
 
 public abstract class BackendGameplay {
 	
-	
 	/**
 	 * This method refills the deckpile from the drawpile if there are no cards left to draw
 	 * 

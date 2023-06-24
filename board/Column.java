@@ -9,7 +9,6 @@ public final class Column {
 	private List<Card>faceDownCards;
 	private List<Card>faceUpCards;
 	
-	
 	/**
 	 * Constructor
 	 */
@@ -25,7 +24,6 @@ public final class Column {
 		Column.add(faceUpCards);
 		
 	}
-	
 	
 	/**
 	 * Gets the Face up Cards of the column
@@ -47,5 +45,4 @@ public final class Column {
 		return this.faceDownCards;
 	}
 	
-
 }

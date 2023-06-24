@@ -119,6 +119,7 @@ public class Board  {
 	public SuitePile GetSuitePile(String suite)
 	{
 		
+		//USED FOR ERROR HANDLING
 		SuitePile error = new SuitePile();
 		
 		switch(suite)

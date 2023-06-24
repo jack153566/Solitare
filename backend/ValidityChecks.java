@@ -69,7 +69,6 @@ public abstract class ValidityChecks {
 	{
 		
 		
-		
 		if(pile.GetPile().isEmpty()==true && card.GetValue()==Value.ACE.GetValue())
 		{
 			return true;
