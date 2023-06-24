@@ -13,7 +13,6 @@ import java.util.Stack;
 
 public class Board  {
 	
-	
 	//Class variables
 	private Deck deck;
 	
@@ -32,7 +31,9 @@ public class Board  {
 	private SuitePile clubPile;
 	private SuitePile spadePile;
 	
-	
+	/**
+	 * Constructor
+	 */
 	public Board(){
 		
 		//initialize variables
@@ -56,6 +57,12 @@ public class Board  {
 		
 	}
 	
+	/**
+	 * Column Getter
+	 * 
+	 * @param columnNum used to specify which column is needed.
+	 * @return
+	 */
 	public Column GetColumn(int columnNum)
 	{	
 		
@@ -82,16 +89,33 @@ public class Board  {
 		
 	}	
 	
+	/**
+	 * Draw Pile Getter
+	 * 
+	 * @return
+	 */
 	public DrawPile GetDrawPile()
 	{
 		return this.drawPile;
 	}
 	
+	/**
+	 * Deck getter
+	 * 
+	 * @return
+	 */
 	public Deck GetDeck()
 	{
 		return this.deck;
 	}
 	
+	/**
+	 * 
+	 * Suite Pile Getter
+	 * 
+	 * @param suite used to specify which suite pile
+	 * @return
+	 */
 	public SuitePile GetSuitePile(String suite)
 	{
 		

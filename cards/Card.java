@@ -8,11 +8,15 @@ package cards;
  */
 public class Card{
 	
-//	private int value;
 	private String suite;
 	private int value;
 	
-	//Constructor
+	/**
+	 * Constructor
+	 * 
+	 * @param suite
+	 * @param value
+	 */
 	public Card(cards.Suite suite, cards.Value value)
 	{
 		
@@ -20,12 +24,22 @@ public class Card{
 		this.value=value.GetValue();
 		
 	}
-		
+	
+	/**
+	 * Value getter
+	 * 
+	 * @return
+	 */
 	public int GetValue()
 	{
 		return this.value;	
 	}
 	
+	/**
+	 * Suite getter
+	 * 
+	 * @return
+	 */
 	public String GetSuite()
 	{
 		return this.suite;	

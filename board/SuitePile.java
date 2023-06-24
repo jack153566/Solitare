@@ -21,17 +21,28 @@ public final class SuitePile {
 		
 	}
 	
+	//USED FOR ERROR HANDLING
 	public SuitePile() {
 		
 		System.exit(0);
 		
 	}
-
+	
+	/**
+	 * Suite variable getter
+	 * 
+	 * @return
+	 */
 	public String GetSuite()
 	{
 		return this.Suite;
 	}
 	
+	/**
+	 * Stack variable getter
+	 * 
+	 * @return
+	 */
 	public Stack<Card> GetPile()
 	{
 		return this.Pile;

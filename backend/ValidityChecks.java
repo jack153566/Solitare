@@ -7,6 +7,14 @@ import board.SuitePile;
 
 public abstract class ValidityChecks {
 	
+	/**
+	 * 
+	 * Checks if moving the selected card to the target card is valid
+	 * 
+	 * @param targetCard
+	 * @param selectedCard
+	 * @return
+	 */
 	public static boolean CheckValidColumnMove(Card targetCard, Card selectedCard)
 	{
 		
@@ -48,7 +56,14 @@ public abstract class ValidityChecks {
 		 
 	}
 	
-	
+	/**
+	 * 
+	 * Checks to see if the selected card can be moved to the selected Suite Pile
+	 * 
+	 * @param pile
+	 * @param card
+	 * @return
+	 */
 	public static boolean CheckValidSuitePileMove(SuitePile pile, Card card)
 
 	{
@@ -86,6 +101,12 @@ public abstract class ValidityChecks {
 		
 	}
 	
+	/**
+	 * Checks to see if a column is empty for a King move
+	 * 
+	 * @param column
+	 * @return
+	 */
 	private static boolean CheckIfColumnIsEmpty(Column column)
 	{
 		
