@@ -14,5 +14,17 @@ public abstract class Inputs {
 	private String targetColumn;
 	private String targetSuitePile;
 	
+	//TODO FINISH METHOD
+	private void selectCard()
+	{
+		
+	}
+	
+	
+	//TODO FINISH METHOD
+	private void targetLocation()
+	{
+		
+	}
 
 }
