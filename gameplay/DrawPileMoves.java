@@ -12,17 +12,10 @@ public abstract class DrawPileMoves {
 	 * @param selectedCard
 	 * @param targetCol
 	 */
-	public void MoveToColumn(Card selectedCard, Column targetCol)
+	public void MoveToColumn(Card targetCard, Card selectedCard, Column targetCol)
 	{
 		
-		if (ValidityChecks.CheckValidKingMove(selectedCard,targetCol) == true)
-		{
-			
-			targetCol.GetFaceUpCards().add(selectedCard);
-			
-		}
-		
-		else if(ValidityChecks.CheckValidColumnMove(selectedCard, targetCol.GetFaceUpCards().get(0))==true)
+		if(ValidityChecks.CheckValidColumnMove(targetCard, selectedCard, targetCol)==true)
 		{
 			
 			targetCol.GetFaceUpCards().add(selectedCard);
@@ -31,7 +24,6 @@ public abstract class DrawPileMoves {
 		
 	}
 	
-	//TODO FINISH METHOD THIS WILL NEED TO CALL TO A METHOD THAT GIVES INPUT TO WHICH PILE WAS USED
 	public void MoveToSuitePile(SuitePile pile, Card selectedCard)
 	{
 		

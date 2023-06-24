@@ -1,5 +1,4 @@
 package gameplay;
-import backend.BackendGameplay;
 import backend.ValidityChecks;
 import board.Column;
 import board.SuitePile;
@@ -18,7 +17,7 @@ public abstract class ColumnMoves {
 	public void MoveCardsToOtherColumn(Card targetCard, Card selectedCard, Column targetCol)
 	{
 		
-		if(ValidityChecks.CheckValidColumnMove(targetCard,selectedCard)==true)
+		if(ValidityChecks.CheckValidColumnMove(targetCard,selectedCard,targetCol)==true)
 		{	
 			targetCol.GetFaceUpCards().add(targetCol.GetFaceUpCards().indexOf(targetCard), selectedCard);
 		}

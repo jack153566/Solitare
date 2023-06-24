@@ -15,44 +15,55 @@ public abstract class ValidityChecks {
 	 * @param selectedCard
 	 * @return
 	 */
-	public static boolean CheckValidColumnMove(Card targetCard, Card selectedCard)
+	public static boolean CheckValidColumnMove(Card targetCard, Card selectedCard, Column col)
 	{
 		
 		 boolean isValidMove = false;
 		 boolean isOppositeColor = false;
 		 boolean isCorrectOrder = false;
-		
-		
-		 //This if checks for a black target card and a red selected card
-		if(targetCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite()) &&
-		   selectedCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite())  )
-		
-		{
-			isOppositeColor = true;			
-		}
 		 
-		//This if checks for a red target card and a black selected card
-		if(targetCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite()) &&
-		   selectedCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite())  )
-		
-		{			
-					isOppositeColor = true;				
-		}
-		
-		//this checks for numerical value correctness
-		if(targetCard.GetValue()-1 == selectedCard.GetValue())
-		{
-			isCorrectOrder = true;
-		}
-		
-		 
-		 //this checks to make sure all conditions are true to make sure it is a valid move
-		 if(isOppositeColor == true && isCorrectOrder == true)
+		 if(selectedCard.GetValue()==Value.KING.GetValue() && CheckIfColumnIsEmpty(col)==true)
 		 {
-			 isValidMove = true;
+			 
+			return true;
+			 
 		 }
 		 
-		 return isValidMove;
+		 else
+		 {
+		
+			 //This if checks for a black target card and a red selected card
+			if(targetCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite()) &&
+			   selectedCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite())  )
+			
+			{
+				isOppositeColor = true;			
+			}
+			 
+			//This if checks for a red target card and a black selected card
+			if(targetCard.GetSuite().equalsIgnoreCase(Suite.HEART.GetSuite()) || targetCard.GetSuite().equalsIgnoreCase(Suite.DIAMOND.GetSuite()) &&
+			   selectedCard.GetSuite().equalsIgnoreCase(Suite.CLUB.GetSuite()) || selectedCard.GetSuite().equalsIgnoreCase(Suite.SPADE.GetSuite())  )
+			
+			{			
+						isOppositeColor = true;				
+			}
+			
+			//this checks for numerical value correctness
+			if(targetCard.GetValue()-1 == selectedCard.GetValue())
+			{
+				isCorrectOrder = true;
+			}
+			
+			 
+			 //this checks to make sure all conditions are true to make sure it is a valid move
+			 if(isOppositeColor == true && isCorrectOrder == true)
+			 {
+				 isValidMove = true;
+			 }
+		 
+			 return isValidMove;
+		 
+		 }
 		 
 	}
 	
@@ -83,20 +94,6 @@ public abstract class ValidityChecks {
 		}
 		
 		return false;
-		
-	}
-	
-	public static boolean CheckValidKingMove(Card KingCard, Column column)
-	{
-		
-		boolean validKingMove = false;
-		
-		if(CheckIfColumnIsEmpty(column)==true && KingCard.GetValue()==Value.KING.GetValue())
-		{
-			validKingMove = true;
-		}
-		
-		return validKingMove;
 		
 	}
 	
