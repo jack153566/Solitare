@@ -7,7 +7,7 @@ import board.SuitePile;
 public abstract class DrawPileMoves {
 	
 	/**
-	 * Checks to see if targetCol is empty first and if targetCard is a king, if it is accepts the move, if not, checks that the column move is valid
+	 * Checks that the column move is valid
 	 * 
 	 * @param selectedCard
 	 * @param targetCol
@@ -24,6 +24,12 @@ public abstract class DrawPileMoves {
 		
 	}
 	
+	/**
+	 * Moves card to suite pile if move is valid
+	 * 
+	 * @param pile
+	 * @param selectedCard
+	 */
 	public void MoveToSuitePile(SuitePile pile, Card selectedCard)
 	{
 		
