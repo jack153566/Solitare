@@ -2,6 +2,7 @@ package gameplay;
 import backend.BackendGameplay;
 import backend.ValidityChecks;
 import board.Column;
+import board.SuitePiles;
 import cards.*;
 
 
@@ -21,9 +22,9 @@ public abstract class ColumnMoves {
 	}
 	
 	//TODO FINISH METHOD
-	public void MoveCardTosuitePile(Column col, Card card )
+	public void MoveCardTosuitePile(SuitePiles pile, Card card )
 	{
-		
+		if(CheckValidSuitePile(pile.getPile(suite))
 	}
 	
 	 

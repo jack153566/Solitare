@@ -3,6 +3,7 @@ import board.Column;
 import cards.Card;
 import cards.Suite;
 import cards.Value;
+import board.SuitePile;
 
 public abstract class ValidityChecks {
 	
@@ -48,20 +49,26 @@ public abstract class ValidityChecks {
 	}
 	
 	
-	public static boolean CheckValidSuitePileMove(Card[] pile, Card card, int cardCounter)
+	public static boolean CheckValidSuitePileMove(SuitePile pile, Card card)
 
 	{
 		
-		boolean isValidMove = false;
 		
-		if(pile[cardCounter].GetValue()+1 == card.GetValue() && pile[cardCounter].GetSuite()==card.GetSuite())
+		
+		if(pile.GetPile().isEmpty()==true && card.GetValue()==Value.ACE.GetValue())
+		{
+			return true;
+		}
+		
+		
+		if(pile.GetPile().lastElement().GetValue()+1 == card.GetValue() && card.GetSuite().equalsIgnoreCase(pile.GetSuite()))
 		{
 			
-			isValidMove = true;
+			return true;
 			
 		}
 		
-		return isValidMove;
+		return false;
 		
 	}
 	
